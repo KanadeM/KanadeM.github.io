@@ -1,8 +1,8 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      朴素贝叶斯   	# 标题 
-subtitle:   墨尔本大学 COMP90049 课程笔记 #副标题
-date:       2018-03-01 				# 时间
+title:      Naive Bayes   	# 标题 
+subtitle:   Unimelb COMP90049 Notes #副标题
+date:       2020-03-01 				# 时间
 author:     Lingjun Meng 						# 作者
 header-img: img/post-bg-unimelb.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
