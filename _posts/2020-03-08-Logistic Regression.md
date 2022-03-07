@@ -28,9 +28,11 @@ $$
 
 For prediction, we apply Bayes Rule to obtain the conditional distribution
 $$
+\begin{aligned}
 &P(x, y)=P(y) P(x \mid y)=P(y \mid x) P(x) \\
 &P(y \mid x) =\frac{P(y) P(x \mid y)}{P(x)} \\
 &\hat{y}=\underset{y}{\operatorname{argmax}} P(y \mid x) \approx P(y) P(x \mid y)
+\end{aligned}
 $$
 **How about we model P(y|x) directly? → Logistic Regression**
 
