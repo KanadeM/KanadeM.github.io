@@ -39,9 +39,9 @@ $$
 **Logistic Regression**
 
 - Is a binary **classification model**(Classification!!!! not Regression)
-- Is a probabilistic discriminative model because it optimizes P(y|x) directly
+- Is a probabilistic discriminative model because it optimizes P(y\|x) directly
 - Learns to optimally **discriminate between inputs which belong to different classes**
-- No model of P(x|y) → no conditional feature independence assumption
+- No model of P(x\|y) → no conditional feature independence assumption
 
 ## 1.1 Aside: Linear Regression
 
@@ -63,7 +63,7 @@ Loss (error) is the sum of squared errors (SSE): $L=\sum_{I=1}^{N}(\hat{y}^i-y^i
 Now tidy up our resources and problems.
 
 - Let’s assume a binary classification task, y is true (1) or false (0).
-- We model probabilites P(y = 1|x; θ) = p(x) as a function of observations x under parameters θ.
+- We model probabilites P(y = 1\|x; θ) = p(x) as a function of observations x under parameters θ.
 - We want to use a **regression** approach
 
 Linear regression problem: the boundary is -inf to +inf, and the boundary of probability is 0-1.
@@ -98,7 +98,7 @@ $$
 
 ## 1.3 Logistic Regression: Prediction
 
-We define a **decision boundary**, e.g., predict y = 1 if P(y = 1|x1, x2, ..., xF; θ) > 0.5 and y = 0 otherwise
+We define a **decision boundary**, e.g., predict y = 1 if P(y = 1\|x1, x2, ..., xF; θ) > 0.5 and y = 0 otherwise
 
 <img src="./static/img/image-20210629082233689.png" alt="image-20210629082233689" style="zoom:50%;" />
 
