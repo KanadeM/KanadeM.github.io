@@ -34,20 +34,20 @@ $$
  &\hat{y}=\underset{y}{\operatorname{argmax}} P(y \mid x) \approx P(y) P(x \mid y)
 \end{aligned}
 $$
-==**How about we model P(y|x) directly? → Logistic Regression**==
+**How about we model P(y|x) directly? → Logistic Regression**
 
 # Chapter 1 Logistic Regression-Binary Classification Problem
 
-==**Logistic Regression**==
+**Logistic Regression**
 
-- Is a binary ==**classification model**==(Classification!!!! not Regression)
+- Is a binary **classification model**(Classification!!!! not Regression)
 - Is a probabilistic discriminative model because it optimizes P(y|x) directly
-- Learns to optimally ==**discriminate between inputs which belong to different classes**==
+- Learns to optimally **discriminate between inputs which belong to different classes**
 - No model of P(x|y) → no conditional feature independence assumption
 
 ## 1.1 Aside: Linear Regression
 
-==**linear regression is the simples regression model**== 
+**linear regression is the simples regression model** 
 
 Real-valued $\hat{y}$ is predicted as a linear combination of weighted feature values
 $$
@@ -66,7 +66,7 @@ Now tidy up our resources and problems.
 
 - Let’s assume a binary classification task, y is true (1) or false (0).
 - We model probabilites P(y = 1|x; θ) = p(x) as a function of observations x under parameters θ.
-- We want to use a ==**regression**== approach
+- We want to use a **regression** approach
 
 Linear regression problem: the boundary is -inf to +inf, and the boundary of probability is 0-1.
 
@@ -100,7 +100,7 @@ $$
 
 ## 1.3 Logistic Regression: Prediction
 
-We define a **==decision boundary==**, e.g., predict y = 1 if P(y = 1|x1, x2, ..., xF; θ) > 0.5 and y = 0 otherwise
+We define a **decision boundary**, e.g., predict y = 1 if P(y = 1|x1, x2, ..., xF; θ) > 0.5 and y = 0 otherwise
 
 <img src="./static/img/image-20210629082233689.png" alt="image-20210629082233689" style="zoom:50%;" />
 
@@ -110,7 +110,7 @@ We define a **==decision boundary==**, e.g., predict y = 1 if P(y = 1|x1, x2, ..
 
 # Chapter 2 Parameter Estimation
 
-**==What are the steps we would follow in finding the optimal parameters?==**
+**What are the steps we would follow in finding the optimal parameters?**
 
 ## 2.1 Objective Function
 
@@ -158,9 +158,9 @@ Taking a negative number can help us turn the maximum problem into a minimum pro
 
 ## 2.2 Take 1st Derivative of the Objective Function
 
-==**Preliminaries**==
+**Preliminaries**
 
-- The derivative of the logistic (**==sigmoid==**) function is $\frac{\partial \sigma(z)}{\partial z}=\sigma(z)[1-\sigma(z)]$
+- The derivative of the logistic (**sigmoid**) function is $\frac{\partial \sigma(z)}{\partial z}=\sigma(z)[1-\sigma(z)]$
 
 - The chain rule tells us that $\frac{\partial A}{\partial D}=\frac{\partial A}{\partial B} \times \frac{\partial B}{\partial C} \times \frac{\partial C}{\partial D}$
 
@@ -194,7 +194,7 @@ $$
 
 ## 2.3 Solve for θ
 
-Unfortunately, that’s not straightforward here (as for Naive Bayes)。 Instead, we will use an iterative method: ==**Gradient Descent**==
+Unfortunately, that’s not straightforward here (as for Naive Bayes)。 Instead, we will use an iterative method: **Gradient Descent**
 $$
 \begin{aligned}
 &\theta_{j}^{(n e w)} \leftarrow \theta_{j}^{(\text {old })}-\eta \frac{\partial \log \mathcal{L}(\theta)}{\partial \theta_{j}} \\
@@ -210,7 +210,7 @@ We predict the probability of each class $c$ by passing the input representation
 $$
 p(y=c \mid x ; \theta)=\frac{\exp \left(\theta_{c} x\right)}{\sum_{k} \exp \left(\theta_{k} x\right)}
 $$
-==**We learn a parameter vector $\theta_{c}$ for each class $c$**==
+**We learn a parameter vector $\theta_{c}$ for each class $c$**
 
 ## 3.2 Example! Multi-class with 1-hot features
 
@@ -297,14 +297,14 @@ When logistic regression is applied to multiple classification problems. Each ca
 
 # Chapter 4 Logistic Regression: Final Thoughts
 
-==**Pros**== 
+**Pros** 
 
 - Probabilistic interpretation
 - No restrictive assumptions on features
 - Often outperforms Naive Bayes
 - Particularly suited to frequency-based features (so, popular in NLP) 
 
-==**Cons**==
+**Cons**
 
 - Can only learn linear feature-data relationships
 - Some feature scaling issues
