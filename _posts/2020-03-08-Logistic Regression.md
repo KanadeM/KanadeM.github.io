@@ -166,7 +166,7 @@ Taking a negative number can help us turn the maximum problem into a minimum pro
 
 
 $$
-\begin{gathered}
+\begin{aligned}
 \frac{\partial \log \mathcal{L}(\theta)}{\partial \theta_{j}}=\frac{\partial \log \mathcal{L}(\theta)}{\partial p} \times \frac{\partial p}{\partial z} \times \frac{\partial z}{\partial \theta_{j}} \quad \\
 \text { where } p=\sigma\left(\theta^{T} x\right) \text { and } z=\theta^{T} x \\
 \text { Since } \mathcal{L}(\theta)=-[y \log p+(1-y) \log (1-p)\\
@@ -174,7 +174,7 @@ $$
 \frac{\partial \log \mathcal{L}(\theta)}{\partial p}=-\left(\frac{y}{p}-\frac{1-y}{1-p}\right) \\
 \frac{\partial \hat{p}}{\partial z}=\frac{\partial \sigma(z)}{\partial z}=\sigma(z)[1-\sigma(z)]\\
 \frac{\partial z}{\partial \theta_{j}}=\frac{\partial \theta^{\top} x}{\partial z}=x_{j}
-\end{gathered}
+\end{aligned}
 $$
 Therefore
 $$
