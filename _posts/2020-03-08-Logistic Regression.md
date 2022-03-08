@@ -71,6 +71,7 @@ Now tidy up our resources and problems.
 Linear regression problem: the boundary is -inf to +inf, and the boundary of probability is 0-1.
 
 To solve this problem, we introduce the sigmoid function.
+
 $$
 f(x)=\frac {1}{1+e^{-x}}=\frac {e^{x}}{e^{x}+1}=1-S(-x)
 $$
