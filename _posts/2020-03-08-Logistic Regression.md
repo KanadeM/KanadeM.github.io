@@ -89,10 +89,13 @@ e^{-(\theta_{0}+\sum_{i} \theta_{i} x_{i})}=\frac{1-P(x)}{P(x)}\\
 $$
 
 The above formula is logistic regression function.
+
 $$
 \log \frac{P(x)}{1-P(x)}=\theta_{0}+\theta_{1} x_{1}+\ldots \theta_{F} x_{F}
 $$
+
 For binary classification problem, labels are either 0 or 1.
+
 $$
 \begin{aligned}
 &\left(\theta_{0} + \sum_{f=1}^{F} \theta_{f} x_{f}\right)>0 \text { means } y=1\\
@@ -123,10 +126,13 @@ We define a **decision boundary**, e.g., predict y = 1 if P(y = 1\|x1, x2, ..., 
 
 
 Mimimize the Negative conditional log likelihood
+
 $$
 \mathcal{L}(\theta)=-P(Y \mid X ; \theta)=-\prod_{i=1}^{N} P\left(y^{i} \mid x^{i} ; \theta\right)
 $$
+
 note that
+
 $$
 \begin{aligned}
 &P(y=1 \mid x ; \theta)=\sigma\left(\theta^{\top} x\right) \\
@@ -134,14 +140,18 @@ $$
 \end{aligned}\\
 \sigma(x)=\frac{1}{1+e^{-x}}
 $$
+
 so, using likelihood:
+
 $$
 \begin{aligned}
 \mathcal{L}(\theta)=-P(Y \mid X ; \theta) &=-\prod_{i=1}^{N} P\left(y^{i} \mid x^{i} ; \theta\right) \\
 &=-\prod_{i=1}^{N}\left(\sigma\left(\theta^{T} x^{i}\right)\right)^{y^{i}} *\left(1-\sigma\left(\theta^{T} x^{i}\right)\right)^{1-y^{i}}
 \end{aligned}
 $$
+
 take the log of this function
+
 $$
 \log \mathcal{L}(\theta)=-\sum_{i=1}^{N} [y^{i} \log \sigma\left(\theta^{T} x^{i}\right)+\left(1-y^{i}\right) \log \left(1-\sigma\left(\theta^{T} x^{i}\right)\right)]
 $$
@@ -180,7 +190,9 @@ $$
 \frac{\partial z}{\partial \theta_{j}}=\frac{\partial \theta^{\top} x}{\partial z}=x_{j}
 \end{aligned}
 $$
+
 Therefore
+
 $$
 \begin{aligned}
 \frac{\partial \log \mathcal{L}(\theta)}{\partial \theta_{j}} &=\frac{\partial \log \mathcal{L}(\theta)}{\partial p} \times \frac{\partial p}{\partial z} \times \frac{\partial z}{\partial \theta_{j}} \\
@@ -199,6 +211,8 @@ $$
 ## 2.3 Solve for θ
 
 Unfortunately, that’s not straightforward here (as for Naive Bayes)。 Instead, we will use an iterative method: **Gradient Descent**
+
+
 $$
 \begin{aligned}
 &\theta_{j}^{(n e w)} \leftarrow \theta_{j}^{(\text {old })}-\eta \frac{\partial \log \mathcal{L}(\theta)}{\partial \theta_{j}} \\
@@ -211,9 +225,11 @@ $$
 ## 3.1 Multinomial Logistic Regression
 
 We predict the probability of each class $c$ by passing the input representation through the softmax function, a generalization of the sigmoid
+
 $$
 p(y=c \mid x ; \theta)=\frac{\exp \left(\theta_{c} x\right)}{\sum_{k} \exp \left(\theta_{k} x\right)}
 $$
+
 **We learn a parameter vector $\theta_{c}$ for each class $c$**
 
 ## 3.2 Example! Multi-class with 1-hot features
@@ -229,6 +245,7 @@ $$
 
 
 Feature Function 
+
 $$
 \begin{array}{ll}
 x_{0}=1 \text { (bias term) } 
