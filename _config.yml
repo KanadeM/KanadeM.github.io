@@ -64,9 +64,9 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: adc6b874309cf73b3f8f                            #生成的clientID
   clientSecret: 04816cdcf08fe8f853f741098e0cc49bff413c0b    #生成的clientSecret
-  repo: KanadeM.github.io    #仓库名称
-  owner: KanadeM    #github用户名
-  admin: KanadeM
+  repo: kanadem.github.io    #仓库名称
+  owner: kanadem    #github用户名
+  admin: kanadem
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
