@@ -74,9 +74,11 @@ To solve this problem, we introduce the sigmoid function.
 $$
 f(x)=\frac {1}{1+e^{-x}}=\frac {e^{x}}{e^{x}+1}=1-S(-x)
 $$
+
 <img src="./static/img/image-20210629075702138.png" alt="image-20210629075702138" style="zoom:50%;" />
 
 Now we use the sigmoid function to derive logistic regression.
+
 $$
 P(x) = \frac{1}{1+e^{-(\theta_{0}+\sum_{i} \theta_{i} x_{i})}}\\
 \frac{1}{P(x)}=1+e^{-(\theta_{0}+\sum_{i} \theta_{i} x_{i})}\\
@@ -84,6 +86,7 @@ e^{-(\theta_{0}+\sum_{i} \theta_{i} x_{i})}=\frac{1-P(x)}{P(x)}\\
 -(\theta_{0}+\sum_{i} \theta_{i} x_{i})=\ln{\frac{1-P(x)}{P(x)}}\\
 \theta_{0}+\sum_{i} \theta_{i} x_{i}=\ln{\frac{P(x)}{1-P(x)}}
 $$
+
 The above formula is logistic regression function.
 $$
 \log \frac{P(x)}{1-P(x)}=\theta_{0}+\theta_{1} x_{1}+\ldots \theta_{F} x_{F}
