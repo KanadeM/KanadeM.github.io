@@ -12,7 +12,8 @@ tags:								#标签
     - Calculus
 ---
 # 一、 $\lim_{x \to 0}\frac{\sin{x}}{x}=1$
-证明： 易得：$\sin{x} < x < \tan{x}$ 
+Proof:
+Obviously: $\sin{x} < x < \tan{x}$ 
 $$ \therefore 1 < \frac{x}{\sin{x}} < \frac{1}{\cos{x}} $$
  $$ \therefore \cos{x} < \frac{\sin{x}}{x} < 1 $$
  $$ \because \lim_{x\to 0} \cos{x} = 1 $$ 
