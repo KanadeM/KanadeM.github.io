@@ -23,6 +23,7 @@ $$
 - Naive due to unrealistic feature indepencence assumptions
 
 For prediction, we apply Bayes Rule to obtain the conditional distribution
+
 $$
 \begin{aligned}
  &P(x, y)=P(y) P(x \mid y)=P(y \mid x) P(x) \\
@@ -30,6 +31,7 @@ $$
  &\hat{y}=\underset{y}{\operatorname{argmax}} P(y \mid x) \approx P(y) P(x \mid y)
 \end{aligned}
 $$
+
 ==**How about we model P(y|x) directly? → Logistic Regression**==
 
 # Chapter 1 Logistic Regression-Binary Classification Problem
@@ -46,12 +48,14 @@ $$
 ==**linear regression is the simples regression model**== 
 
 Real-valued $\hat{y}$ is predicted as a linear combination of weighted feature values
+
 $$
 \begin{aligned}
 \hat{y} &=\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}+\ldots \\
 &=\theta_{0}+\sum_{i} \theta_{i} x_{i}
 \end{aligned}
 $$
+
 The weights $\theta_0,\theta_1 ...$ are model parameters, and need to be optimized during training
 
 Loss (error) is the sum of squared errors (SSE): $L=\sum_{I=1}^{N}(\hat{y}^i-y^i)^2$
@@ -67,12 +71,15 @@ Now tidy up our resources and problems.
 Linear regression problem: the boundary is -inf to +inf, and the boundary of probability is 0-1.
 
 To solve this problem, we introduce the sigmoid function.
+
 $$
 f(x)=\frac {1}{1+e^{-x}}=\frac {e^{x}}{e^{x}+1}=1-S(-x)
 $$
+
 <img src="./static/img/image-20210629075702138.png" alt="image-20210629075702138" style="zoom:50%;" />
 
 Now we use the sigmoid function to derive logistic regression.
+
 $$
 P(x) = \frac{1}{1+e^{-(\theta_{0}+\sum_{i} \theta_{i} x_{i})}}\\
 \frac{1}{P(x)}=1+e^{-(\theta_{0}+\sum_{i} \theta_{i} x_{i})}\\
@@ -80,11 +87,15 @@ e^{-(\theta_{0}+\sum_{i} \theta_{i} x_{i})}=\frac{1-P(x)}{P(x)}\\
 -(\theta_{0}+\sum_{i} \theta_{i} x_{i})=\ln{\frac{1-P(x)}{P(x)}}\\
 \theta_{0}+\sum_{i} \theta_{i} x_{i}=\ln{\frac{P(x)}{1-P(x)}}
 $$
+
 The above formula is logistic regression function.
+
 $$
 \log \frac{P(x)}{1-P(x)}=\theta_{0}+\theta_{1} x_{1}+\ldots \theta_{F} x_{F}
 $$
+
 For binary classification problem, labels are either 0 or 1.
+
 $$
 \begin{aligned}
 &\left(\theta_{0} + \sum_{f=1}^{F} \theta_{f} x_{f}\right)>0 \text { means } y=1\\
@@ -115,10 +126,13 @@ We define a **==decision boundary==**, e.g., predict y = 1 if P(y = 1|x1, x2, ..
 
 
 Mimimize the Negative conditional log likelihood
+
 $$
 \mathcal{L}(\theta)=-P(Y \mid X ; \theta)=-\prod_{i=1}^{N} P\left(y^{i} \mid x^{i} ; \theta\right)
 $$
+
 note that
+
 $$
 \begin{aligned}
 &P(y=1 \mid x ; \theta)=\sigma\left(\theta^{\top} x\right) \\
@@ -126,14 +140,18 @@ $$
 \end{aligned}\\
 \sigma(x)=\frac{1}{1+e^{-x}}
 $$
+
 so, using likelihood:
+
 $$
 \begin{aligned}
 \mathcal{L}(\theta)=-P(Y \mid X ; \theta) &=-\prod_{i=1}^{N} P\left(y^{i} \mid x^{i} ; \theta\right) \\
 &=-\prod_{i=1}^{N}\left(\sigma\left(\theta^{T} x^{i}\right)\right)^{y^{i}} *\left(1-\sigma\left(\theta^{T} x^{i}\right)\right)^{1-y^{i}}
 \end{aligned}
 $$
+
 take the log of this function
+
 $$
 \log \mathcal{L}(\theta)=-\sum_{i=1}^{N} [y^{i} \log \sigma\left(\theta^{T} x^{i}\right)+\left(1-y^{i}\right) \log \left(1-\sigma\left(\theta^{T} x^{i}\right)\right)]
 $$
@@ -172,7 +190,9 @@ $$
 \frac{\partial z}{\partial \theta_{j}}=\frac{\partial \theta^{\top} x}{\partial z}=x_{j}
 \end{gathered}
 $$
+
 Therefore
+
 $$
 \begin{aligned}
 \frac{\partial \log \mathcal{L}(\theta)}{\partial \theta_{j}} &=\frac{\partial \log \mathcal{L}(\theta)}{\partial p} \times \frac{\partial p}{\partial z} \times \frac{\partial z}{\partial \theta_{j}} \\
@@ -191,6 +211,7 @@ $$
 ## 2.3 Solve for θ
 
 Unfortunately, that’s not straightforward here (as for Naive Bayes)。 Instead, we will use an iterative method: ==**Gradient Descent**==
+
 $$
 \begin{aligned}
 &\theta_{j}^{(n e w)} \leftarrow \theta_{j}^{(\text {old })}-\eta \frac{\partial \log \mathcal{L}(\theta)}{\partial \theta_{j}} \\
@@ -203,9 +224,11 @@ $$
 ## 3.1 Multinomial Logistic Regression
 
 We predict the probability of each class $c$ by passing the input representation through the softmax function, a generalization of the sigmoid
+
 $$
 p(y=c \mid x ; \theta)=\frac{\exp \left(\theta_{c} x\right)}{\sum_{k} \exp \left(\theta_{k} x\right)}
 $$
+
 ==**We learn a parameter vector $\theta_{c}$ for each class $c$**==
 
 ## 3.2 Example! Multi-class with 1-hot features
@@ -221,6 +244,7 @@ $$
 
 
 Feature Function 
+
 $$
 \begin{array}{ll}
 x_{0}=1 \text { (bias term) } 
@@ -273,6 +297,7 @@ x_{3}=
 & x_{3}=\left\{\begin{array}{l}{[10] \text { if humidity=normal }} \\ {[01] \text { if humidity=high }}\end{array}\right.
 \end{array}\\
 $$
+
 **(Small) Test Data set (One Hot) ** 
 
 | Outlook | Temp | Humidity | Class          |
@@ -282,6 +307,7 @@ $$
 | 100     | 100  | 01       | 2 (play)       |
 
 **Model parameters**
+
 $$
 \begin{aligned}
 &\theta_{c 0} = [0.1,0.7,0.2,-3.5,-3.5,-3.5,0.7,2.1]\\
@@ -289,6 +315,7 @@ $$
 &\theta_{c 2} = [3.1,3.4,4.1,1.5,1.5,1.5,0.7,3.6]
 \end{aligned}
 $$
+
 When logistic regression is applied to multiple classification problems. Each category will have a corresponding parameter. Then use the above parameters for each instance one by one on the test set to get the probability of the category, and take the highest.
 
 # Chapter 4 Logistic Regression: Final Thoughts
