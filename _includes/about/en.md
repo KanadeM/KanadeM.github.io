@@ -6,7 +6,7 @@
 >
 > you enter harbors you’re seeing for the first time.
 
-Hi, I’m YEY, a beginner of Data Science 👻. Welcome to contact with me: <yangye0329@gmail.com>
+Hi, I’m Lingjun Meng, a beginner of Data Science 👻. Welcome to contact with me: <menglingjun96@gmail.com>
 
 ##### Interests
 

@@ -6,7 +6,7 @@
 >
 > 航抵你前所未见的海港
 
-Hi，我是 YEY，数据科学小白一枚 👻，欢迎与我交流联系：<yangye0329@gmail.com>
+Hi，我是 Lingjun Meng，数据科学小白一枚 👻，欢迎与我交流联系：<menglingjun96@gmail.com>
 
 
 
