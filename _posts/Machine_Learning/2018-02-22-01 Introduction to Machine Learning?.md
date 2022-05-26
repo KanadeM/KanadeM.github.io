@@ -1,7 +1,7 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Introduction of Maching Learning  	# 标题 
-subtitle:   Introduction of Maching Learning  #副标题
+title:      Introduction to Maching Learning  	# 标题 
+subtitle:   Introduction to Maching Learning  #副标题
 date:       2018-02-22			# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner-ai2.jpg 	#这篇文章标题背景图片
