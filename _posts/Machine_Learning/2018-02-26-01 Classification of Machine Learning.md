@@ -4,7 +4,7 @@ title:      Classification of Maching Learning Algorithm  	# 标题
 subtitle:   Classification of Maching Learning Algorithm #副标题
 date:       2018-02-26 				# 时间
 author:     Leonard Meng						# 作者
-header-img: img/post-banner-ai2.jpeg 	#这篇文章标题背景图片
+header-img: img/post-banner-ai2.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 mathjax: true                       # 是否启用 MathJax
 tags:								#标签
