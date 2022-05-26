@@ -4,7 +4,7 @@ SEOTitle: Lingjun Meng's Blog
 header-img: img/home-bg-02.png
 email: menglingjun96@gmail.com
 description: "Every failure is leading towards success."
-keyword: "YEY Blog, YEY 的博客, Data Science"
+keyword: "Lingjun Meng, Blog"
 url: "http://KanadeM.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/KanadeM/KanadeM.github.io.git" # your code repository
@@ -81,11 +81,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 12cf4852c3acac78c55b                            #生成的clientID
-  clientSecret: 7696f2d8427d3bac01826e7d5514488c4d1cc0fc    #生成的clientSecret
-  repo: yey11.github.io    #仓库名称
-  owner: yey11    #github用户名
-  admin: yey11
+  clientID: 'adc6b874309cf73b3f8f'                            #生成的clientID
+  clientSecret: '04816cdcf08fe8f853f741098e0cc49bff413c0b'    #生成的clientSecret
+  repo: kanadem.github.io    #仓库名称
+  owner: kanadem    #github用户名
+  admin: kanadem
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -93,11 +93,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 95ec7ebf32a2234ba0a0d240cafb944e
+# ba_track_id: 95ec7ebf32a2234ba0a0d240cafb944e
 
 # Google Analytics
-ga_track_id: 'UA-148351284-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'UA-222174048-1'            # Format: UA-xxxxxx-xx
+ga_domain: blog.menglingjun.com           # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -121,7 +121,7 @@ page-mathjax: true
 # Friends
 friends: [
     {
-        title: "WM",
+        title: "An",
         href: "https://wangmianhelo.github.io/wangmian/"
     }
 ]
