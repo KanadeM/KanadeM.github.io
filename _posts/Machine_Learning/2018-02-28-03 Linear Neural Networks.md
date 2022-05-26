@@ -175,7 +175,7 @@ plt.show()
 
 
 
-![png](/img/output_2_1.png)
+![png](http://blog.menglingjun.com/img/output_2_1.png)
     
 
 
