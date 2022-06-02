@@ -23,7 +23,7 @@ RSS: false
 github_username:    KanadeM
 linkedin_username:  575628304@qq.com
 wechat_username:  MLJ575628304
-email: menglingjun96@@gmail.com
+email: menglingjun96@gmail.com
 #facebook_username:  baiying.qiu.7
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
@@ -97,7 +97,7 @@ gitalk:
 
 # Google Analytics
 ga_track_id: 'UA-222174048-1'            # Format: UA-xxxxxx-xx
-ga_domain: blog.menglingjun.com           # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: www.menglingjun.com           # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
