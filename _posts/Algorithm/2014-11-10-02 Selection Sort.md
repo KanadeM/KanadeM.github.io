@@ -17,7 +17,7 @@ tags:								#标签
 
 Similar to bubble sort. The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. 
 
-# How Bubble Sort Works?
+# How Selection Sort Works?
 
 ![bubble-sort](https://www.menglingjun.com/img/in-post/selection-sort.gif)
 
