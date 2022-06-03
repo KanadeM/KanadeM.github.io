@@ -1,7 +1,7 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
 title:      HashMap Source Code   	# 标题 
-subtitle:   Dive into JDK 03 HashMap Source Code #副标题
+subtitle:   HashMap Source Code of Java #副标题
 date:       2019-01-26 				# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner/java-development.jpeg 	#这篇文章标题背景图片
