@@ -27,9 +27,37 @@ Spring makes the programming Java quicker, easier, and safer for everybody by th
 3. Declarative programming based on aspects and 
 4. Reduce boilerplate code with aspects and templates
 
+# IoC(Inversion of Control)
+
+This chapter covers the Spring Framework implementation of the Inversion of Control (IoC) [1]principle. IoC is also known as dependency injection (DI). It is a process whereby objects define their dependencies, that is, the other objects they work with, only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. The container then injects those dependencies when it creates the bean. This process is fundamentally the inverse, hence the name Inversion of Control (IoC), of the bean itself controlling the instantiation or location of its dependencies by using direct construction of classes, or a mechanism such as the Service Locator pattern.
+
+
+```java
+class A{
+    int a;
+    int b;
+
+    public void method1(){
+
+    }
+}
+
+// Java without spring
+// Manual initialization
+A a = new A()
+
+// Java with spring
+// Automatically initialization
+@Autowired
+A a;
+```
+
+
+
+
 # Bean Oriented Programming
 
-## 
+In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. 
 
 # Source Code
 
