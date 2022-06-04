@@ -19,6 +19,18 @@ According to official website [spring.io](https://spring.io/projects/spring-fram
 
 > The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.<br>A key element of Spring is infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.
 
+# Why Spring?
+Spring makes the programming Java quicker, easier, and safer for everybody by the following ways:
+
+1. Lightweight and non-invasive programming based on POJOs.
+2. Reduce coupling through dependency injection and interface orientation
+3. Declarative programming based on aspects and 
+4. Reduce boilerplate code with aspects and templates
+
+# Bean Oriented Programming
+
+## 
+
 # Source Code
 
 Spring framework wersion: v3.2.6
