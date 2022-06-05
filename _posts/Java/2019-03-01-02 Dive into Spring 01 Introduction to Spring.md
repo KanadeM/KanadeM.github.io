@@ -52,7 +52,7 @@ A a = new A()
 A a;
 ```
 
-<span color="red">If we code without java, we need to instant a object through new statement.</span>
+<span style="color: red">If we code without java, we need to instant a object through new statement.</span>
 
 
 # Bean Oriented Programming
