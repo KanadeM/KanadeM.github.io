@@ -60,6 +60,13 @@ A a;
 
 In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. 
 
+# AOP
+
+Take a car as an example. Each component like the engine, wheel and car frame is designed and made by different companies. How can they make up together?
+
+
+
+
 # Source Code
 
 Spring framework wersion: v3.2.6
