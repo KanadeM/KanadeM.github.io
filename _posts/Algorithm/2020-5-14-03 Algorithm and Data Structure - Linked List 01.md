@@ -25,7 +25,7 @@ Cite from https://www.simplilearn.com/tutorials/data-structure-tutorial/linked-l
 Linked lists do not support random access, and singly linked lists cannot search backwards for nodes. So when you see a linked list, the first algorithmic trick to use is pointers. And a double pointer is often required.
 
 #  Double Pointers
-## (1) Merge/Partition List
+## Merge/Partition List
 
 [86. Partition List 分解两个链表](https://leetcode.com/problems/partition-list/)
 
@@ -63,16 +63,9 @@ class Solution {
 }
 ```
 
-[23. Merge k Sorted Lists 合并K个升序链表](https://leetcode.com/problems/merge-k-sorted-lists/)
-<p style="background: yellow; font-weight: bold">Idea: You only need to use a priority queue, put all the elements in the linked list, and then take them out in order. </p>
-
-<p style="font-weight:bold;color:red">Note:<br>
-   Note the use of priority queues: <br>
-   PriorityQueue<ListNode> pq = new PriorityQueue<>(lists.length, (a, b)->(a.val - b.val));<br>
-   First put each head node, and then find a head node and then put the child nodes of the head node into the priority queue.
-</p>
 
 ```java
+
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
     if (lists.length == 0) return null;
@@ -101,6 +94,7 @@ class Solution {
     return dummy.next;
     }
 }
+
 ```
 
 ## Find the last kth node
