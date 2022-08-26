@@ -65,6 +65,7 @@ class Solution {
 
 
 [23. Merge k Sorted Lists 合并K个升序链表](https://leetcode.com/problems/merge-k-sorted-lists/)
+
 <p style="background: yellow; font-weight: bold">Idea: You only need to use a priority queue, put all the elements in the linked list, and then take them out in order. </p>
 
 <p style="font-weight:bold;color:red">Note:<br>
