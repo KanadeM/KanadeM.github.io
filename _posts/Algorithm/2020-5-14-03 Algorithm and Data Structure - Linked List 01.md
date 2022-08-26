@@ -64,6 +64,16 @@ class Solution {
 ```
 
 
+[23. Merge k Sorted Lists 合并K个升序链表](https://leetcode.com/problems/merge-k-sorted-lists/)
+<p style="background: yellow; font-weight: bold">Idea: You only need to use a priority queue, put all the elements in the linked list, and then take them out in order. </p>
+
+<p style="font-weight:bold;color:red">Note:<br>
+   Note the use of priority queues: <br>
+   PriorityQueue<ListNode> pq = new PriorityQueue<>(lists.length, (a, b)->(a.val - b.val));<br>
+   First put each head node, and then find a head node and then put the child nodes of the head node into the priority queue.
+</p>
+
+
 ```java
 
 class Solution {
@@ -166,7 +176,7 @@ class Solution {
 }
 ```
 
-#### (3) Linked List Cycle 
+## Linked List Cycle 
 
 [141 Linked List Cycle 判断链表中有没有环](https://leetcode.com/problems/linked-list-cycle/)
 
