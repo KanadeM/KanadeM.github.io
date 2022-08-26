@@ -112,6 +112,7 @@ class Solution {
    This algorithm is not difficult, but can be a basic operation for many finding nodes from the end of a linked list.
 </p>
 
+
 ```java
 ListNode findFromEnd(ListNode head, int k) {
     ListNode p1 = head;
@@ -130,6 +131,7 @@ ListNode findFromEnd(ListNode head, int k) {
 }
 ```
 
+
 [19. Remove Nth Node From End of List 删除链表倒数第n个节点](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
 
@@ -137,6 +139,7 @@ ListNode findFromEnd(ListNode head, int k) {
 <p style="font-weight:bold;color:red">Note:<br>
    If we want to delete the first node, the algorithm will report an error because we cannot find the last n+1 node. At this time, dummyhead can be introduced as the 0 node before the first node.
 </p>
+
 
 ```java
 class Solution {
@@ -196,11 +199,13 @@ public class Solution {
 }
 ```
 
+
 [142 Linked List Cycle II 如果链表中有环，如何计算起点](https://leetcode.com/problems/linked-list-cycle-ii)
 
-==**解题思路：首先判断是否有环，如果有环，假设此时慢指针走了k步，则快指针一定走了2k步。k一定是环的大小的整数倍。此时让慢指针重新指向头结点。从下图可知，假设相遇点到环起点的距离是m，则刚好快指针和慢指针同事走k-m步时会在环起点再次相遇。**==
+<p style="background: yellow; font-weight: bold">ideas: First, determine whether there is a ring. If there is a ring, assuming that the slow pointer has taken k steps at this time, the fast pointer must have taken 2k steps. k must be an integer multiple of the size of the ring. At this point, let the slow pointer re-point to the head node. As can be seen from the figure below, assuming that the distance from the meeting point to the starting point of the ring is m, then the fast pointer and the slow pointer will meet again at the starting point of the ring when they take k-m steps. </p>
 
 ![img](https://labuladong.github.io/algo/images/%e5%8f%8c%e6%8c%87%e9%92%88/2.jpeg)
+
 
 ```java
 public class Solution {
@@ -230,6 +235,7 @@ public class Solution {
 }
 ```
 
+
 [160. Intersection of Two Linked Lists 两个链表是否相交](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
 <img src="https://assets.leetcode.com/uploads/2021/03/05/160_statement.png" alt="img" style="zoom:50%;" />
@@ -242,6 +248,7 @@ public class Solution {
 <p style="font-weight:bold;color:red">Note:<br>
    It is indeed a good idea to splicing two linked lists of different lengths in this way.
 </p>
+
 
 ```java
 public class Solution {
@@ -259,3 +266,4 @@ public class Solution {
     }
 }
 ```
+
