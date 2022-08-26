@@ -1,7 +1,7 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Algorithm and Data Structure - Linked List 01   	# 标题 
-subtitle:   Algorithm and Data Structure - Linked List 01 #副标题
+title:      Algorithm and Data Structure 01 - Linked List 01   	# 标题 
+subtitle:   Algorithm and Data Structure 01 - Linked List 01 #副标题
 date:       2020-05-14 				# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner/post-banner-algorithm.png 	#这篇文章标题背景图片
@@ -246,7 +246,7 @@ public class Solution {
 <img src="https://assets.leetcode.com/uploads/2021/03/05/160_statement.png" alt="img" style="zoom:50%;" />
 
 
-<p style="background: yellow; font-weight: bold">idea: Use the pointer to traverse the first linked list, and then connect to the next linked list. The other linked list does the same, so that the two linked lists can be logically linked.</p>
+<p style="background: yellow; font-weight: bold">idea: Use the pointer to traverse the first linked list, and then make it pointing to the next linked list. The other linked list does the same, so that the two linked lists can be logically linked.</p>
 
 <p style="background: yellow; font-weight: bold">Prove: Let a1 to c1 need m steps, b1 to c1 need n steps, c1 to c3 need k steps. Then m + k + n = n + k + m. For the case of no intersection, when p1 == p2, there is only one possibility, that is, the two pointers reach the null node at the end of the linked list at the same time. </p>
 
