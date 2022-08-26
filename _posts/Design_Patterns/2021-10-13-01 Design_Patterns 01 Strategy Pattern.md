@@ -2,7 +2,7 @@
 layout:     post                    # 使用的布局（不需要改）
 title:      Strategy Pattern        # 标题 
 subtitle:   Design_Patterns 01 Strategy Pattern #副标题
-date:       2016-10-13              # 时间
+date:       2021-10-13              # 时间
 author:     Leonard Meng                        # 作者
 header-img: img/post-banner/java-development.jpeg   #这篇文章标题背景图片
 catalog: true                       # 是否归档
