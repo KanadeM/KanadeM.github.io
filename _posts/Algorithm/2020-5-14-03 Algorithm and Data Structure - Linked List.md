@@ -4,7 +4,7 @@ title:      Algorithm and Data Structure - Linked List   	# 标题
 subtitle:   Algorithm and Data Structure - Linked List #副标题
 date:       2020-05-14 				# 时间
 author:     Leonard Meng						# 作者
-header-img: img/post-banner/post-banner-sorting.jpeg 	#这篇文章标题背景图片
+header-img: img/post-banner/post-banner-algorithm.png 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 mathjax: true                       # 是否启用 MathJax
 tags:								#标签
