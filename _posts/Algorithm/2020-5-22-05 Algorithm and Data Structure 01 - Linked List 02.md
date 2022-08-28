@@ -142,4 +142,51 @@ class Solution {
 }
 ```
 
-#### 
+## Reverse Nodes in k-Group
+
+[25. Reverse Nodes in k-Group K个一组反转链表](https://leetcode.com/problems/reverse-nodes-in-k-group/)
+
+解题思路：这道题是一道Hard的题。首先我们要写一个辅助函数，翻转a和b之间的节点。这个问题不难。
+
+<p style="background:yellow; font-weight:bold">
+Solution: We can also use the pervious function. 
+</p>
+
+```java
+class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null) return null;
+        // Record node a and node b
+        ListNode a, b;
+        a = b = head;
+        for (int i = 0; i < k; i++) {
+            // Base case
+            if (b == null) return head;
+            b = b.next;
+        }
+        // 反转前 k 个元素
+        ListNode newHead = reverse(a, b);
+        // 递归反转后续链表并连接起来
+        a.next = reverseKGroup(b, k);
+        return newHead; 
+    }
+    
+    
+    public ListNode reverse(ListNode head, ListNode end){
+        ListNode pre = null;
+        ListNode curr = head;
+        ListNode next = head;
+        while(curr != end){
+            next = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = next;
+
+        }
+
+        return pre;
+    }
+}
+```
+
+## 
