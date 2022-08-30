@@ -112,7 +112,7 @@ An easy problem, let go through the code directly.
 ```java
 class Solution{
     void reverseString(char[] s) {
-        // 一左一右两个指针相向而行
+        // Two pointers walk towards each other.
         int left = 0, right = s.length - 1;
         while (left < right) {
             // Swap s[left] and s[right]
