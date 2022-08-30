@@ -1,8 +1,8 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Algorithm and Data Structure - Array 01 Two Pointers   	# 标题 
-subtitle:   Algorithm and Data Structure - Array 01 Two Pointers #副标题
-date:       2020-6-01			# 时间
+title:      Algorithm and Data Structure - Array 02 Prefix Sum Array   	# 标题 
+subtitle:   Algorithm and Data Structure - Array 02 Prefix Sum Array #副标题
+date:       2020-610			# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner/post-banner-algorithm.png 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
@@ -13,7 +13,7 @@ tags:								#标签
     - Array
 ---
 
-# Fast and slow pointer
+# What is prefix sum array?
 ## Remove Duplicates from Sorted Array
 [26. Remove Duplicates from Sorted Array 删除排序数组中的重复项](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
