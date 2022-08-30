@@ -14,7 +14,7 @@ tags:								#标签
 ---
 
 # Fast and slow pointer
-
+## Remove Duplicates from Sorted Array
 [26. Remove Duplicates from Sorted Array 删除排序数组中的重复项](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 <p style="background:yellow; font-weight:bold">
@@ -38,6 +38,7 @@ class Solution {
     }
 }
 ```
+## Move Zeroes
 [283. Move Zeroes 移动零](https://leetcode.com/problems/move-zeroes/)
 
 
@@ -49,6 +50,7 @@ Solution: Dividing the problem into two parts will make it easier. On first stag
 class Solution {
     public void moveZeroes(int[] nums) {
         int slow = 0, fast = 0;
+        // Move non-zero elements
         while(fast < nums.length){
             if(nums[fast] == 0){
                 fast++;
@@ -59,7 +61,7 @@ class Solution {
             }
         }
         
-        
+        // Set the rest of the array to zero
         while(slow < nums.length){
             nums[slow] = 0;
             slow++;
@@ -68,4 +70,59 @@ class Solution {
         return;
     }
 }
+```
+
+# Left and right pointer
+
+## Binary Search
+One of the common appilcations of left and right pointer is binary search. Take [167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) as an example.
+
+In this problme, we need to find two elements from a sorted array where the sum of these two elements is the given number.
+
+<p style="background:yellow; font-weight:bold">
+Solution: This is a binary search problem. We can set left pointer pointing to array[0], and right pointer pointing to array[length - 1]. When the sum is less than target, we move the left pointer forward to make the sum larger. When the sum is bigger than target, we move the right pointer backword to make the sum smaller.
+</p>
+
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int left = 0, right = numbers.length - 1;
+        while (left < right) {
+            int sum = numbers[left] + numbers[right];
+            if (sum == target) {
+                // 题目要求的索引是从 1 开始的
+                return new int[]{left + 1, right + 1};
+            } else if (sum < target) {
+                left++; // 让 sum 大一点
+            } else if (sum > target) {
+                right--; // 让 sum 小一点
+            }
+        }
+        return new int[]{-1, -1};
+    }
+    
+}
+```
+
+## Reverse String
+[344. Reverse String](https://leetcode.com/problems/reverse-string/)
+
+An easy problem, let go through the code directly.
+
+```java
+class Solution{
+    void reverseString(char[] s) {
+        // 一左一右两个指针相向而行
+        int left = 0, right = s.length - 1;
+        while (left < right) {
+            // 交换 s[left] 和 s[right]
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            left++;
+            right--;
+        }
+    }
+}
+
 ```
