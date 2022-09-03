@@ -1,8 +1,8 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Algorithm and Data Structure - Array 02 Prefix Sum Array   	# 标题 
-subtitle:   Algorithm and Data Structure - Array 02 Prefix Sum Array #副标题
-date:       2020-6-10			# 时间
+title:      Features and differences of HTTP 1.0, 1.1, 2.0 protocols  	# 标题 
+subtitle:   Features and differences of HTTP 1.0, 1.1, 2.0 protocols #副标题
+date:       2021-6-10			# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner/post-banner-algorithm.png 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
@@ -20,7 +20,7 @@ Prefix Sum array is a data structure design which helps us to answer several que
 
 # The application of prefix sum array
 ## Range Sum Query
-For example, [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/), in this problem, without prefix array we have to sum the array every time when we call sumRange function.
+[303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)
 
 # Referencxe List
 [1] https://iq.opengenus.org/prefix-sum-array/
