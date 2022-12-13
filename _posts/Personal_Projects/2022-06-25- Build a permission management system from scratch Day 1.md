@@ -39,11 +39,11 @@ Lombok: a java library tool that is used to minimize/remove the boilerplate code
 
 Step 1: Choose Spring Initializr as project generator
 
-![springboot1](https://www.menglingjun.com/img/in-post/springboot1.jpeg)
+![springboot1](https://www.menglingjun.com/img/in-post/springboot-adimn1.jpeg)
 
 Step 2: Choose dependences. You can also change dependences later, so skipping is OK.
 
-![springboot1](https://www.menglingjun.com/img/in-post/springboot2.png)
+![springboot2](https://www.menglingjun.com/img/in-post/springboot-adimn2.png)
 
 Step 3: Check the pom.xml. An example is here: https://github.com/KanadeM/Java-VUE-Admin-System/blob/main/Admin-Java/pom.xml Add necessary dependences if you need.
 
@@ -80,3 +80,9 @@ insert  into `sys_user`(`id`,`username`,`password`,`avatar`,`email`,`phonenumber
 
 
 ```
+
+## Create Mapper and Service by MybatisX
+
+Step 1: Install MybatisX if it's not installed
+
+![springboot3](https://www.menglingjun.com/img/in-post/springboot-adimn3.png)
