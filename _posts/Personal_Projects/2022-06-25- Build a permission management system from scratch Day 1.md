@@ -86,3 +86,10 @@ insert  into `sys_user`(`id`,`username`,`password`,`avatar`,`email`,`phonenumber
 Step 1: Install MybatisX if it's not installed
 
 ![springboot3](https://www.menglingjun.com/img/in-post/springboot-adimn3.png)
+
+Step 2: Connect to database
+![springboot-adimn4](https://www.menglingjun.com/img/in-post/springboot-adimn4.png)
+
+
+
+
