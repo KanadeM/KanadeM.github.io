@@ -33,3 +33,14 @@ Lombok: a java library tool that is used to minimize/remove the boilerplate code
 - Spring boot 2.3.2-RELEASE
 - Mysql 7.6
 - Redis
+
+# Steps
+## Create a new Spring Boot project
+
+Step 1: Choose Spring Initializr as project generator
+
+![springboot1](https://www.menglingjun.com/img/in-post/springboot1.jpeg)
+
+Step 2: Choose dependences. You can also change depend packages later so skipping is OK.
+
+![springboot1](https://www.menglingjun.com/img/in-post/springboot2.png)
