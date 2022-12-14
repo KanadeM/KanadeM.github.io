@@ -78,7 +78,126 @@ public enum ResponseCode {
 
 ```
 
-Users are able to understand error messages.
+When we meet an exception, we can create a new bussiness exception with above response code. Users are able to understand error messages.
 
 # Handle all responses
 
+Frist of all, we need to create a global response format.
+
+```java
+public class Response <T> {
+    @SuppressWarnings("unused")
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(Response.class);
+
+    private static final long serialVersionUID = -1802122468331526708L;
+    private int statusCode = -1;
+    private String message = "待处理";
+    private T data;
+}
+```
+
+An example of above response class is:
+
+```json
+{
+    "statusCode":200,
+    "message":"Success",
+    "data": "Hello World"
+}
+```
+
+With above response class, when we want to return responses to front-end, we can just put data in response.data field.
+
+However, coding response.data looks so stupid. So, we need a global handler to process all responses.
+
+```java
+
+/*
+ * This is base package, please replace with yours.
+ */
+@ControllerAdvice(basePackages = "org.mengsoft.admin")
+public class ResponseHandler implements ResponseBodyAdvice<Object> {
+
+
+    @Override
+    public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> aClass) {
+        return true;
+    }
+
+    // Handle responsebody writer before responsebody is generated.
+    @Override
+    public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType,
+                                  Class<? extends HttpMessageConverter<?>> aClass, ServerHttpRequest serverHttpRequest,
+                                  ServerHttpResponse serverHttpResponse) {
+        if (o instanceof ErrorResponse) {
+            ErrorResponse errorResponse = (ErrorResponse) o;
+            return Response.fail(errorResponse.getStatusCode(), errorResponse.getMessage());
+        } else if (o instanceof String) {
+            return JsonUtil.object2Json(Response.success(o));
+        }
+
+        return Response.success(o);
+    }
+}
+
+```
+
+In this class, we implement ResponseBodyAdvice interface, which is used to custom ResponseBody before a default one is generated. In beforeBodyWrite function, we check the response whether is an error and then generate different responseBody.
+
+# Replace try/catch by annotation
+
+Some errors are offen happended, such as, phone number, wrong parameters. Using try catch block again and again makes your boss unhappy. In this situation, custom annotation is a good choice.
+
+```java
+import javax.validation.Constraint;
+import javax.validation.Payload;
+import java.lang.annotation.*;
+
+@Documented
+//指定注解的实现类
+@Constraint(validatedBy = PhoneValidator.class)
+@Target({ElementType.METHOD, ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Phone {
+    String message() default "Please enter correct phone number.";
+
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
+
+    @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER})
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
+    @interface list {
+        Phone[] value();
+    }
+}
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class PhoneValidator implements ConstraintValidator<Phone, String> {
+    private static final Pattern phonePattern = Pattern.compile(
+            "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\\\d{8}$");
+
+
+    @Override
+    public void initialize(Phone constraintAnnotation){
+
+    }
+
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context){
+        if (value == null || value.length() == 0) {
+            return true;
+        }
+        Matcher m = phonePattern.matcher(value);
+        return m.matches();
+    }
+}
+
+```
+
+
+This is an annotation of phone number verification. By adding this annotation on parameters, we can reduce code repetition rate.
