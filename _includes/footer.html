@@ -297,7 +297,7 @@
     searchInput: document.getElementById('search_box'),
         resultsContainer: document.getElementById('search_results'),
         json: '/search.json',
-        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        searchResultTemplate: '<li><a href="{url}" title="{title}">{title}</a></li>',
         noResultsText: 'No results',
         limit: 50,
         fuzzy: false,
