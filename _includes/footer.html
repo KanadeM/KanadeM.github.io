@@ -293,6 +293,26 @@
         // handle case of empty input
         return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
     }
+    SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+        resultsContainer: document.getElementById('search_results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+})
 
     // SimpleJekyllSearch({
     //     searchInput: document.getElementById('search-input'),
