@@ -47,34 +47,113 @@ String signature = HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(pay
 
 ```
 
+
 When combined, these sections form a complete JWT, which looks like: `header.payload.signature`
 
-## Usage in Java
+## An example of JWT
+This is a JWT string:
+```java
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
+
+![dive-into-java-jwt1](https://www.menglingjun.com/img/in-post/dive-into-java-jwt1.png)
+
+# Usage in Java
 
 Java has a variety of libraries available to handle JWT creation and validation. For this example, we'll use the popular library JJWT.
 
-1. **Creating a JWT**: 
+1. **Import dependency in pom.xml**: 
 
 ```java
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import java.util.Date;
-
-String jwt = Jwts.builder()
-  .setSubject("John Doe")
-  .setIssuedAt(new Date())
-  .signWith(SignatureAlgorithm.HS256, "secret")
-  .compact();
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.9.0</version>
+</dependency>
 ```
 
-2. **Parsing a JWT**:
+2. **Create JWTUtils Class**:
 
 ```java
-import io.jsonwebtoken.Jwts;
+package org.mengsoft.adminbackend.common;
 
-Jws<Claims> claims = Jwts.parser()
-  .setSigningKey("secret")
-  .parseClaimsJws(jwt);
+import io.jsonwebtoken.*;
+import org.bouncycastle.util.encoders.Base64;
+import org.mengsoft.adminbackend.constant.JwtConstant;
+import org.mengsoft.adminbackend.entity.CheckResult;
+
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Date;
+
+public class JwtUtils {
+
+    public static String createJWT(String id, String subject, long ttlMillis) {
+        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
+        long nowMillis = System.currentTimeMillis();
+        Date now = new Date(nowMillis);
+        SecretKey secretKey = generalKey();
+        JwtBuilder builder = Jwts.builder()
+                .setId(id)
+                .setSubject(subject)   // Subject
+                .setIssuer("Java1234")     // Issuer
+                .setIssuedAt(now)      // Issued time
+                .signWith(signatureAlgorithm, secretKey); // Signature Algorithm and Secret Key
+        if (ttlMillis >= 0) {
+            long expMillis = nowMillis + ttlMillis;
+            Date expDate = new Date(expMillis);
+            builder.setExpiration(expDate); // Expiration time
+        }
+        return builder.compact();
+    }
+
+    public static SecretKey generalKey() {
+        byte[] encodedKey = Base64.decode(JwtConstant.JWT_SECERT);
+        SecretKey key = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
+        return key;
+    }
+
+    /**
+     * Check JWT
+     * @param jwtStr
+     * @return
+     */
+    public static CheckResult validateJWT(String jwtStr) {
+        CheckResult checkResult = new CheckResult();
+        Claims claims = null;
+        try {
+            claims = parseJWT(jwtStr);
+            checkResult.setSuccess(true);
+            checkResult.setClaims(claims);
+        } catch (ExpiredJwtException e) {
+            checkResult.setErrCode(JwtConstant.JWT_ERRCODE_EXPIRE);
+            checkResult.setSuccess(false);
+        } catch (SignatureException e) {
+            checkResult.setErrCode(JwtConstant.JWT_ERRCODE_FAIL);
+            checkResult.setSuccess(false);
+        } catch (Exception e) {
+            checkResult.setErrCode(JwtConstant.JWT_ERRCODE_FAIL);
+            checkResult.setSuccess(false);
+        }
+        return checkResult;
+    }
+
+
+    /**
+     * Parse JWT
+     * @param jwt
+     * @return
+     * @throws Exception
+     */
+    public static Claims parseJWT(String jwt) {
+        SecretKey secretKey = generalKey();
+        return Jwts.parser()
+                .setSigningKey(secretKey)
+                .parseClaimsJws(jwt)
+                .getBody();
+    }
+}
+
 ```
 
 In these examples, `"secret"` is the secret key used to sign the JWT. For production use, remember to store this key securely and not hardcode it into your application.
