@@ -42,10 +42,9 @@ A JWT typically consists of three parts: the header, the payload, and the signat
 3. **Signature**: The signature is used to verify the message wasn't changed along the way. It's created by encoding the header and payload, then concatenating them with a period, and finally applying the specified algorithm.
 
 ```java
-HMACSHA256(
-  base64UrlEncode(header) + "." +
-  base64UrlEncode(payload),
-  secret)
+//$secret is a string that contains the secret key
+String signature = HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload), secret)
+
 ```
 
 When combined, these sections form a complete JWT, which looks like: `header.payload.signature`
