@@ -10,6 +10,9 @@ mathjax: true                       # 是否启用 MathJax
 tags:								#标签
     - Java
     - Source Code
+    - IOC
+    - Beans
+    - AOP
     - Spring
 ---
 
