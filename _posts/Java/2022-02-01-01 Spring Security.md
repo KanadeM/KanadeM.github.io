@@ -84,6 +84,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
+ * Spring Security Config
  * @program: admin-backend
  * @Site www.mengsoft.org
  */
