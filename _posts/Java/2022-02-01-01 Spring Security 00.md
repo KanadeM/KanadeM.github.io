@@ -1,7 +1,7 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Spring Security   	# 标题 
-subtitle:   Spring Security #副标题
+title:      Introduction to Spring Security   	# 标题 
+subtitle:   Introduction to Spring Security #副标题
 date:       2022-02-01  				# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner/post-banner-spring-logo.jpeg 	#这篇文章标题背景图片
@@ -142,7 +142,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ```
 
-The above configuration will secure all HTTP endpoints except those under `/public/**`. It enables form-based login for all users.
+The above configuration will secure all HTTP endpoints except static resources. It enables form-based login and register for all users.
 
 ## Conclusion
 
