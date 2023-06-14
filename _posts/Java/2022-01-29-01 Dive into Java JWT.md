@@ -1,8 +1,8 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Dive into Java JWT  	# 标题 
-subtitle:   Dive into Java JWT #副标题
-date:       2022-02-01  				# 时间
+title:      Java JWT  	# 标题 
+subtitle:   Java JWT #副标题
+date:       2022-01-29  				# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner/post-banner-spring-logo.jpeg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
@@ -57,6 +57,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 ```
 
 ![dive-into-java-jwt1](https://www.menglingjun.com/img/in-post/dive-into-java-jwt1.png)
+## JWT workflow
+![dive-into-java-jwt2](https://www.menglingjun.com/img/in-post/dive-into-java-jwt2.png)
 
 # Usage in Java
 
