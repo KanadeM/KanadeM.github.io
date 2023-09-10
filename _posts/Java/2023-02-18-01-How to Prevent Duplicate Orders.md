@@ -115,31 +115,6 @@ PlaceOrderResVO placeOrder(PlaceOrderReqVO reqVO) {
 
 Here's a simplified workflow diagram that includes both the user's actions and the subsequent system operations:
 
-\```
-Client                      Server                         Database/Redis
-  |                            |                                  |
-  |------ Browse Products ---->|                                  |
-  |<---- Show Product Info ----|                                  |
-  |                            |                                  |
-  |------ Add to Cart -------->|                                  |
-  |                            |                                  |
-  |------ Proceed to Checkout ->|                                 |
-  |                            |                                  |
-  |--- Confirm & Submit Order ->|                                 |
-  |                            |                                  |
-  |                            |--- Is this requestId unique? --->|
-  |                            |<----------- Yes/No -------------|
-  |                            |                                  |
-  |                            |--- Lock Redis on requestId ---->|
-  |                            |<--------- Lock Acquired --------|
-  |                            |                                  |
-  |                            |--- Place order in DB ---------->|
-  |                            |<------ DB Acknowledgment -------|
-  |                            |                                  |
-  |                            |--- Cache order in Redis ------->|
-  |                            |<-------- Cache Ack -------------|
-  |                            |                                  |
-  |<---- Return Order ID -------|                                  |
-\```
+
 
 This wraps up our article. Understanding the user workflow and implementing robust server-side strategies can help in preventing duplicate orders effectively.
