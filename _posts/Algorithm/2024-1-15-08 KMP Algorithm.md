@@ -12,15 +12,18 @@ tags:								#标签
     - Data Structure
     - Array
 ---
+# PerFace
+The key of the hard problem in the leetcode weekly contest this week is KMP algorithm. I have learned this algorithm before, but I still need to review it. So I write this blog to review this algorithm.
 
-# What is prefix sum array?
-<p style="background:yellow; font-weight:bold">
-Prefix Sum array is a data structure design which helps us to answer several queries such as sum in a given range in constant time which would otherwise take linear time. It requires a linear time preprocessing and is widely used due to its simplicity and effectiveness. $^{[1]}$
-</p>
+# Introduction
+String matching algorithms are used to find a pattern in a string. The simplest string matching algorithm is the Brute-Force algorithm. It is also known as the Naive String Matching algorithm. It is the simplest algorithm and is easy to understand and implement. But it is not the most efficient algorithm. It is not suitable for large texts. The time complexity of the Brute-Force algorithm is O(m*n), where m is the length of the pattern and n is the length of the text.The following figure shows the working of the Brute-Force algorithm.
 
-# The application of prefix sum array
-## Range Sum Query
-For example, [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/), in this problem, without prefix array we have to sum the array every time when we call sumRange function.
+![kmp1](https://www.menglingjun.com/img/algorithm-kmp1.gif)
+
+# KMP Algorithm
+KMP algorithm is an efficient string matching algorithm. It is based on the observation that when a mismatch occurs, the pattern itself contains enough information to determine where the next match could begin, thus bypassing re-examination of previously matched characters. The time complexity of the KMP algorithm is O(m+n), where m is the length of the pattern and n is the length of the text. The following figure shows the working of the KMP algorithm.
+
+# How to build the next array
 
 # Referencxe List
 [1] https://iq.opengenus.org/prefix-sum-array/
