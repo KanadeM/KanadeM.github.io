@@ -5,9 +5,9 @@ header-img: img/home-banner.jpeg
 email: menglingjun96@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Lingjun Meng, Blog"
-url: "http://KanadeM.github.io"          # your host, for absolute URL
+url: "http://LeonardMeng.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/LeonardMeng/KanadeM.github.io.git" # your code repository
+github_repo: "https://github.com/LeonardMeng/LeonardMeng.github.io.git" # your code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -83,7 +83,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: '75e6d13fa559aa0331b0'                            #生成的clientID
   clientSecret: '8da51015fbc11ae5ba7c9b3df00bab8bf4d7bbc2'    #生成的clientSecret
-  repo: kanadem.github.io    #仓库名称
+  repo: leonardmeng.github.io    #仓库名称
   owner: leonardmeng    #github用户名
   admin: leonardmeng
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
