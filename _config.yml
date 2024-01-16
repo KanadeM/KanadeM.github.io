@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "Lingjun Meng, Blog"
 url: "http://KanadeM.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/KanadeM/KanadeM.github.io.git" # your code repository
+github_repo: "https://github.com/LeonardMeng/KanadeM.github.io.git" # your code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -20,7 +20,7 @@ sidebar-avatar: /img/avatar-leonard.jpg      # use absolute URL, seeing it's use
 RSS: false
 # weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
-github_username:    KanadeM
+github_username:    LeonardMeng
 linkedin_username:  lingjun-meng-69a635119
 wechat_username:  MLJ575628304
 email: menglingjun96@gmail.com
