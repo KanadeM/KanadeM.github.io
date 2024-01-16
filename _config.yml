@@ -81,8 +81,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: '6977c2702e6b7cddf15e'                            #生成的clientID
-  clientSecret: 'fd6c1b29f485c6c829bf38b462eca4f1cfb78213'    #生成的clientSecret
+  clientID: '75e6d13fa559aa0331b0'                            #生成的clientID
+  clientSecret: '8da51015fbc11ae5ba7c9b3df00bab8bf4d7bbc2'    #生成的clientSecret
   repo: kanadem.github.io    #仓库名称
   owner: LeonardMeng    #github用户名
   admin: LeonardMeng
