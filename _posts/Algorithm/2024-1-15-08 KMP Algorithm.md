@@ -32,7 +32,7 @@ Let's take a look at the next aray of the pattern "ABACABAB". According to KMP a
 
 ![kmp1](https://www.menglingjun.com/img/algorithm-kmp3.gif)
 
-Pointer j start from 0. It will check whether pat.charAt(0) == pat.charAt(j). j also means the length of the prefix and suffix. If pat.charAt(0) == pat.charAt(j), then j++ and next[j] = j. If pat.charAt(0) != pat.charAt(j), let's see the second to last character in pat, the pointer j is 6. According to next array, we find that we need to check the whether PAT[3] equals PAT[7], and we got fail. In this case, we want to check if there is a shorter common prefix and suffix. Luckily, the shorter common prefix and suffix is recorded in next array. So, we can check whether PAT[PAT[3]] == PAT[7] and so on until we find PAT[X] == PAT[7] or PAT[X] == 0. Now, the next array is built.
+The process begins with initializing a pointer 'j', which also represents the length of the current common prefix and suffix. Initially, the algorithm checks if pat.charAt(0) == pat.charAt(j). If they are equal, 'j' is incremented, and next[j] is set to 'j'. If pat.charAt(0) != pat.charAt(j)', the algorithm looks for a shorter common prefix and suffix. This is done by referring back to the 'next' array. For example, if the pointer 'j' is at position 6, we need to check if PAT[3]equalsPAT[7]. If this comparison fails, the algorithm continues to search for a shorter matching prefix and suffix using the 'next' array, checking if PAT[PAT[3]] == PAT[7], and so on, until it finds PAT[X] == PAT[7]orPAT[X] == 0`. This process repeats until the 'next' array is completely built.
 
 # Implementation
 ```java
