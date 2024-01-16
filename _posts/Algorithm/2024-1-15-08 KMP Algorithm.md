@@ -9,8 +9,7 @@ catalog: true 						# 是否归档
 mathjax: true                       # 是否启用 MathJax
 tags:								#标签
     - Algorithm
-    - Data Structure
-    - Array
+    - KMP
 ---
 # PerFace
 The key of the hard problem in the leetcode weekly contest this week is KMP algorithm. I have learned this algorithm before, but I still need to review it. So I write this blog to review this algorithm.
