@@ -26,102 +26,29 @@ span:hover{
 </style>
 
 <span>
-This is an interesting title animation in CSS.
+This is an interesting title animation in CSS. Please hover on me to see the effect.
 </span>
 
-# React
-React, a popular JavaScript library for building user interfaces, often involves handling the this keyword, especially in class components. Understanding how this behaves in different contexts is crucial for React developers. In this article, we'll explore the behavior of this in React, using a class component example that demonstrates a common scenario.
+# Source Code
+```css
+span {
+    /* Sets a linear gradient as the background. The gradient moves from left to right, starting with #ec695c color and transitioning to #61c454 color. */
+    background: linear-gradient(to right, #ec695c, #61c454) no-repeat right bottom;
 
-# Class Components and this
-In React class components, this refers to the instance of the component. This is crucial for accessing state, props, and class methods. Consider the following example:
+    /* Initially sets the size of the background (gradient) to 0 width and 2px height, effectively hiding it initially. */
+    background-size: 0 2px;
 
-```javascript
-class Weather extends React.Component {
-    constructor(props) {
-        super(props);
-        // Initialize state
-        this.state = { isHot: false };
-    }
-
-    render() {
-        // Read state
-        const { isHot } = this.state;
-        return <h1 onClick={this.changeWeather}>Today's weather is {isHot ? 'hot' : 'cool'}</h1>;
-    }
-
-    changeWeather() {
-        // Where is changeWeather located?
-        // On the prototype object of Weather, for instance use
-        // Since changeWeather is a callback for onClick, it's not called through the instance directly
-        // When changeWeather is called through a Weather instance, 'this' inside it refers to the Weather instance
-        // Methods in the class default to strict mode, so 'this' inside changeWeather is undefined
-        console.log(this);
-    }
+    /* Applies a transition effect to the background-size property, so changes in background-size will occur over 1300 milliseconds. */
+    transition: background-size 1300ms;
 }
 
-// Render the component to the page
-ReactDOM.render(<Weather />, document.getElementById('test'));
+span:hover {
+    /* On hover, changes the starting position of the background (gradient) to the left. */
+    background-position-x: left;
 
-```
-
-In the above example, this within the changeWeather method should ideally refer to the component instance. However, there's a catch.
-
-## The Problem with this
-When changeWeather is used as an onClick event handler, its context changes. In JavaScript, the value of this is determined by how a function is called, not
-
-where it is defined. Since changeWeather is used as a callback and not called directly as a method of the Weather instance, this does not refer to the component instance, leading to unexpected behavior — typically, this will be undefined.
-
-This is not specific to React but is a part of how JavaScript functions work. In class components of React, this behavior can lead to bugs, especially when trying to access this.state or this.props inside these callbacks.
-
-# Why Does This Happen?
-The root cause of this problem lies in JavaScript's handling of this inside functions. In JavaScript, the value of this inside a function depends on the function's execution context. When a method like changeWeather is passed as a callback, JavaScript doesn't automatically bind the context of the component instance to it.
-
-# Solutions in React
-React offers several ways to handle this issue:
-
-## 1. Binding in the Constructor:
-
-One common solution is to explicitly bind the method to the component instance in the constructor.
-
-```javascript
-constructor(props) {
-    super(props);
-    this.state = { isHot: false };
-    this.changeWeather = this.changeWeather.bind(this);
+    /* On hover, changes the size of the background to 100% width and 2px height, making the gradient line visible under the span element. */
+    background-size: 100% 2px;
 }
+
+
 ```
-By doing this, changeWeather will always have this referring to the component instance, regardless of how it's called.
-
-## 2. Arrow Function in Render:
-
-Another approach is to use an arrow function in the render method:
-
-```javascript
-render() {
-    return <h1 onClick={() => this.changeWeather()}>Today's weather is {this.state.isHot ? 'hot' : 'cool'}</h1>;
-}
-```
-Arrow functions don't have their own this context, so this refers to the enclosing lexical context, which is the component instance in this case.
-
-## 3. Class Properties as Arrow Functions:
-
-A modern and increasingly popular approach is to define the method as an arrow function in the class property:
-
-```javascript
-class Weather extends React.Component {
-    state = { isHot: false };
-
-    changeWeather = () => {
-        console.log(this);
-        // Rest of the method
-    };
-
-    render() {
-        return <h1 onClick={this.changeWeather}>Today's weather is {this.state.isHot ? 'hot' : 'cool'}</h1>;
-    }
-}
-```
-In this approach, changeWeather is automatically bound to the instance of the class, so this will always refer to the component.
-
-# Conclusion
-Understanding the behavior of this in React class components is key to writing bug-free code. 
