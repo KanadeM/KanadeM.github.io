@@ -1,16 +1,34 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Understanding 'this' in React Components  	# 标题 
-subtitle:   Understanding 'this' in React Components #副标题
-date:       2023-11-15			# 时间
+title:      An Interesting UnderLine Animation in CSS  	# 标题 
+subtitle:   An Interesting UnderLine Animation in CSS #副标题
+date:       2024-01-20			# 时间
 author:     Leonard Meng						# 作者
 header-img: img/post-banner/post-banner-algorithm.png 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 mathjax: true                       # 是否启用 MathJax
 tags:								#标签
-    - React
-    - JavaScript
+    - CSS
+    - HTML
 ---
+
+
+<style>
+span{
+    background: linear-gradient(to right, #ec695c, #61c454) no-repeat right bottom;
+    background-size: 0 2px;
+    transition: background-size 1300ms;
+}
+span:hover{
+    background-position-x: left;
+    background-size: 100% 2px;
+}
+</style>
+
+<span>
+This is an interesting title animation in CSS.
+</span>
+
 # React
 React, a popular JavaScript library for building user interfaces, often involves handling the this keyword, especially in class components. Understanding how this behaves in different contexts is crucial for React developers. In this article, we'll explore the behavior of this in React, using a class component example that demonstrates a common scenario.
 
